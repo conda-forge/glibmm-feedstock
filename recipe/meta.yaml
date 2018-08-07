@@ -17,15 +17,17 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 3
+  number: 4
   skip: true  # [win]
 
 requirements:
   build:
     - pkg-config
+    - {{ compiler('cxx') }}
+  host:
     - libsigcpp
-    - glib 2.51.*
-    - xz 5.2.*
+    - glib
+    - xz
 
 test:
   commands:
