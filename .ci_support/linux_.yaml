@@ -1,1 +1,11 @@
-{}
+cxx_compiler:
+- toolchain_cxx
+glib:
+- '2.55'
+pin_run_as_build:
+  glib:
+    max_pin: x.x
+  xz:
+    max_pin: x.x
+xz:
+- '5.2'
