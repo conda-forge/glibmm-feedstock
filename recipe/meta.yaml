@@ -1,6 +1,6 @@
-{% set major_minor = "2.52" %}
-{% set version = major_minor + ".1" %}
-{% set sha256 = "dc19d20fb6b24d6b6da7cbe1b2190b38ae6ad64e6b93fecdcce71b995f43c975" %}
+{% set major_minor = "2.62" %}
+{% set version = major_minor + ".0" %}
+{% set sha256 = "36659f13cc73282392d1305858f3bbca46fbd1ce2f078cc9db8b9f79b2e93cfe" %}
 {% if linux %}
     {% set libext = ".so" %}
 {% else %}
