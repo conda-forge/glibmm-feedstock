@@ -1,11 +1,6 @@
-{% set major_minor = "2.52" %}
-{% set version = major_minor + ".1" %}
-{% set sha256 = "dc19d20fb6b24d6b6da7cbe1b2190b38ae6ad64e6b93fecdcce71b995f43c975" %}
-{% if linux %}
-    {% set libext = ".so" %}
-{% else %}
-    {% set libext = ".dylib" %}
-{% endif %}
+{% set version = "2.58.1" %}
+{% set major_minor = ".".join(version.split(".")[:2]) %}
+{% set sha256 = "6e5fe03bdf1e220eeffd543e017fd2fb15bcec9235f0ffd50674aff9362a85f0" %}
 
 package:
   name: glibmm
@@ -17,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1000
+  number: 0
   skip: true  # [win]
 
 requirements:
@@ -36,13 +31,13 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/lib/libgiomm-2.4{{ libext }}
-    - test -f ${PREFIX}/lib/libglibmm-2.4{{ libext }}
-    - test -f ${PREFIX}/lib/libglibmm_generate_extra_defs-2.4{{ libext }}
+    - test -f ${PREFIX}/lib/libgiomm-2.4${SHLIB_EXT}
+    - test -f ${PREFIX}/lib/libglibmm-2.4${SHLIB_EXT}
+    - test -f ${PREFIX}/lib/libglibmm_generate_extra_defs-2.4${SHLIB_EXT}
 
 about:
   home: http://www.gtkmm.org
-  license: LGPL v2.1
+  license: LGPL-2.1-or-later
   license_family: GPL
   license_file: COPYING
   summary: "This is glibmm, a C++ API for parts of glib that are useful for C++."
@@ -50,3 +45,4 @@ about:
 extra:
   recipe-maintainers:
     - scopatz
+    - isuruf
