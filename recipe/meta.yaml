@@ -27,7 +27,6 @@ requirements:
     - xz
   run:
     - libsigcpp
-    - glib
 
 test:
   commands:
