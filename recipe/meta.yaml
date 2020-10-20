@@ -22,11 +22,11 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - libsigcpp
+    - libsigcpp 2.*
     - glib
     - xz
   run:
-    - libsigcpp
+    - libsigcpp 2.*
 
 test:
   commands:
