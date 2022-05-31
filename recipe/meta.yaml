@@ -23,6 +23,7 @@ requirements:
     - {{ compiler('cxx') }}
     - meson
     - ninja
+    - glib-networking
   host:
     - libsigcpp 3.*
     - glib
