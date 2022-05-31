@@ -19,6 +19,7 @@ requirements:
   build:
     - make
     - pkg-config
+    - gnuconfig  # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
