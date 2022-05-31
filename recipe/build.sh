@@ -19,6 +19,7 @@ sed -i.bk "s/^.*giomm_tls_client.*$//g" tests/meson.build
 meson setup                \
       --prefix="${PREFIX}" \
       --buildtype=release  \
+      --libdir=lib         \
       ./builddir .
 
 cd builddir
