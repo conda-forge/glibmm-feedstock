@@ -31,9 +31,9 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/lib/libgiomm-2.4${SHLIB_EXT}
-    - test -f ${PREFIX}/lib/libglibmm-2.4${SHLIB_EXT}
-    - test -f ${PREFIX}/lib/libglibmm_generate_extra_defs-2.4${SHLIB_EXT}
+    - test -f ${PREFIX}/lib/libgiomm-2.68${SHLIB_EXT}
+    - test -f ${PREFIX}/lib/libglibmm-2.68${SHLIB_EXT}
+    - test -f ${PREFIX}/lib/libglibmm_generate_extra_defs-2.68${SHLIB_EXT}
 
 about:
   home: http://www.gtkmm.org
