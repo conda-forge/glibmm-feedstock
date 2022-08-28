@@ -1,6 +1,6 @@
-{% set version = "2.66.3" %}
+{% set version = "2.70.0" %}
 {% set major_minor = ".".join(version.split(".")[:2]) %}
-{% set sha256 = "afb96202491485d3f44102d98219a172da2d3f9eb78fce3cfb92559ba496e499" %}
+{% set sha256 = "8008fd8aeddcc867a3f97f113de625f6e96ef98cf7860379813a9c0feffdb520" %}
 {% set abi_version = "2.4" %}
 
 package:
@@ -65,7 +65,7 @@ about:
   license: LGPL-2.1-or-later
   license_family: GPL
   license_file: COPYING
-  summary: "This is glibmm, a C++ API for parts of glib that are useful for C++."
+  summary: This is glibmm, a C++ API for parts of glib that are useful for C++.
 
 extra:
   recipe-maintainers:
