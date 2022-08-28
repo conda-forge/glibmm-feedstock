@@ -1,6 +1,7 @@
-{% set version = "2.58.1" %}
+{% set version = "2.66.3" %}
 {% set major_minor = ".".join(version.split(".")[:2]) %}
-{% set sha256 = "6e5fe03bdf1e220eeffd543e017fd2fb15bcec9235f0ffd50674aff9362a85f0" %}
+{% set sha256 = "afb96202491485d3f44102d98219a172da2d3f9eb78fce3cfb92559ba496e499" %}
+{% set abi_version = "2.4" %}
 
 package:
   name: glibmm
@@ -8,31 +9,57 @@ package:
 
 source:
   fn: glibmm-{{ version }}.tar.xz
-  url: http://ftp.gnome.org/pub/GNOME/sources/glibmm/{{ major_minor }}/glibmm-{{ version }}.tar.xz
+  url: https://download.gnome.org/sources/glibmm/{{ major_minor }}/glibmm-{{ version }}.tar.xz
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
+  run_exports:
+    - glibmm-{{ abi_version }} >={{ version }}
 
-requirements:
-  build:
-    - make
-    - pkg-config
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-  host:
-    - libsigcpp 2.*
-    - glib
-    - xz
-  run:
-    - libsigcpp 2.*
+outputs:
+  - name: glibmm-{{ abi_version }}
+    script: build_glibmm.sh  # [unix]
+    script: build_glibmm.bat  # [win]
+    build:
+      run_exports:
+        - glibmm-{{ abi_version }} >={{ version }}
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+        - meson
+        - ninja
+        - pkg-config
+      host:
+        - sigcpp-2.0  >=2.6.0
+        - glib
+        - zlib
+        - xz
+      run_constrained:
+        - glibmm {{ version }}
+    test:
+      requires:
+        - pkg-config
+        - glib
+        - zlib
+        - xz
+      commands:
+        - test -f ${PREFIX}/lib/libglibmm-{{ abi_version }}${SHLIB_EXT}  # [unix]
+        - test -f ${PREFIX}/lib/libgiomm-{{ abi_version }}${SHLIB_EXT}  # [unix]
+        - test -f ${PREFIX}/lib/libglibmm_generate_extra_defs-{{ abi_version }}${SHLIB_EXT}  # [unix]
+        - if not exist %LIBRARY_BIN%\\glibmm-vc142-{{ abi_version }}-1.dll exit 1  # [win]
+        - pkg-config --exact-version {{ version }} glibmm-{{ abi_version }}
+        - pkg-config --exact-version {{ version }} giomm-{{ abi_version }}
 
-test:
-  commands:
-    - test -f ${PREFIX}/lib/libgiomm-2.4${SHLIB_EXT}
-    - test -f ${PREFIX}/lib/libglibmm-2.4${SHLIB_EXT}
-    - test -f ${PREFIX}/lib/libglibmm_generate_extra_defs-2.4${SHLIB_EXT}
+  - name: glibmm
+    requirements:
+      run:
+        - glibmm-{{ abi_version }}  {{ version }}
+    test:
+      commands:
+        - test -f ${PREFIX}/lib/pkg-config/glibmm-{{ abi_version }}.pc  # [unix]
+        - if not exist %LIBRARY_LIB%\\pkgconfig\\glibmm-{{ abi_version }}.pc exit 1  # [win]
 
 about:
   home: http://www.gtkmm.org
