@@ -1,7 +1,7 @@
 {% set version = "2.72.1" %}
 {% set major_minor = ".".join(version.split(".")[:2]) %}
 {% set sha256 = "2a7649a28ab5dc53ac4dabb76c9f61599fbc628923ab6a7dd74bf675d9155cd8" %}
-{% set abi_version = "2.4" %}
+{% set abi_version = "2.68" %}
 
 package:
   name: glibmm
@@ -31,7 +31,7 @@ outputs:
         - ninja
         - pkg-config
       host:
-        - sigcpp-2.0  >=2.6.0
+        - sigcpp-3.0
         - glib
         - zlib
         - xz
