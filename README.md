@@ -89,7 +89,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-glibmm-green.svg)](https://anaconda.org/conda-forge/glibmm) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/glibmm.svg)](https://anaconda.org/conda-forge/glibmm) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/glibmm.svg)](https://anaconda.org/conda-forge/glibmm) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/glibmm.svg)](https://anaconda.org/conda-forge/glibmm) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-glibmm--2.4-green.svg)](https://anaconda.org/conda-forge/glibmm-2.4) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/glibmm-2.4.svg)](https://anaconda.org/conda-forge/glibmm-2.4) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/glibmm-2.4.svg)](https://anaconda.org/conda-forge/glibmm-2.4) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/glibmm-2.4.svg)](https://anaconda.org/conda-forge/glibmm-2.4) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-glibmm--2.68-green.svg)](https://anaconda.org/conda-forge/glibmm-2.68) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/glibmm-2.68.svg)](https://anaconda.org/conda-forge/glibmm-2.68) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/glibmm-2.68.svg)](https://anaconda.org/conda-forge/glibmm-2.68) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/glibmm-2.68.svg)](https://anaconda.org/conda-forge/glibmm-2.68) |
 
 Installing glibmm
 =================
@@ -101,16 +101,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `glibmm, glibmm-2.4` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `glibmm, glibmm-2.68` can be installed with `conda`:
 
 ```
-conda install glibmm glibmm-2.4
+conda install glibmm glibmm-2.68
 ```
 
 or with `mamba`:
 
 ```
-mamba install glibmm glibmm-2.4
+mamba install glibmm glibmm-2.68
 ```
 
 It is possible to list all of the versions of `glibmm` available on your platform with `conda`:
