@@ -11,15 +11,10 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 glib:
-- '2'
-pin_run_as_build:
-  xz:
-    max_pin: x.x
-  zlib:
-    max_pin: x.x
+- '2.74'
 target_platform:
 - linux-64
 xz:
-- '5.2'
+- '5'
 zlib:
 - '1.2'

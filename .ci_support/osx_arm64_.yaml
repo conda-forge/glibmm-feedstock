@@ -9,17 +9,12 @@ cxx_compiler:
 cxx_compiler_version:
 - '14'
 glib:
-- '2'
+- '2.74'
 macos_machine:
 - arm64-apple-darwin20.0.0
-pin_run_as_build:
-  xz:
-    max_pin: x.x
-  zlib:
-    max_pin: x.x
 target_platform:
 - osx-arm64
 xz:
-- '5.2'
+- '5'
 zlib:
 - '1.2'
