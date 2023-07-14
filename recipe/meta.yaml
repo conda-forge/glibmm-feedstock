@@ -1,6 +1,6 @@
-{% set version = "2.76.0" %}
+{% set version = "2.77.0" %}
 {% set major_minor = ".".join(version.split(".")[:2]) %}
-{% set sha256 = "8637d80ceabd94fddd6e48970a082a264558d4ab82684e15ffc87e7ef3462ab2" %}
+{% set sha256 = "7cb34684e7ac6dfbf83492a52dff3f919e2fff63eb7810613bf71eb272d5450e" %}
 {% set abi_version = "2.68" %}
 
 package:
