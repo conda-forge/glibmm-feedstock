@@ -1,6 +1,6 @@
-{% set version = "2.78.1" %}
+{% set version = "2.83.1" %}
 {% set major_minor = ".".join(version.split(".")[:2]) %}
-{% set sha256 = "f473f2975d26c3409e112ed11ed36406fb3843fa975df575c22d4cb843085f61" %}
+{% set sha256 = "68350a823c33da8acfb1263715bb002a36c68346bd44c19ac4c3f0bd190fd2b1" %}
 {% set abi_version = "2.68" %}
 
 package:
@@ -27,6 +27,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('cxx') }}
+        - {{ stdlib("c") }}
         - meson
         - ninja
         - pkg-config
