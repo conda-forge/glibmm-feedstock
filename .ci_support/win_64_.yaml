@@ -1,3 +1,5 @@
+c_stdlib:
+- vs
 channel_sources:
 - conda-forge
 channel_targets:
@@ -11,4 +13,4 @@ target_platform:
 xz:
 - '5'
 zlib:
-- '1.2'
+- '1'
