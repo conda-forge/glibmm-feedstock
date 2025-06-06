@@ -6,7 +6,6 @@ export PKG_CONFIG=$BUILD_PREFIX/bin/pkg-config
 
 meson ${MESON_ARGS} \
     --wrap-mode=nofallback \
-    --buildtype=release \
     --prefix="${PREFIX}" \
     -Dlibdir=lib \
     -Dbuild-examples=false \
