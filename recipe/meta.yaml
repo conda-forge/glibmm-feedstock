@@ -13,7 +13,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - glibmm-{{ abi_version }} >={{ version }}
 
@@ -27,6 +27,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('cxx') }}
+        - {{ stdlib("c") }}
         - meson
         - ninja
         - pkg-config
@@ -34,7 +35,7 @@ outputs:
         - sigcpp-3.0
         - glib
         - zlib
-        - xz
+        - liblzma-devel
       run_constrained:
         - glibmm {{ version }}
     test:
@@ -42,7 +43,7 @@ outputs:
         - pkg-config
         - glib
         - zlib
-        - xz
+        - liblzma-devel
       commands:
         - test -f ${PREFIX}/lib/libglibmm-{{ abi_version }}${SHLIB_EXT}  # [unix]
         - test -f ${PREFIX}/lib/libgiomm-{{ abi_version }}${SHLIB_EXT}  # [unix]
