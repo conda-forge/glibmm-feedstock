@@ -1,6 +1,6 @@
-{% set version = "2.78.1" %}
+{% set version = "2.88.0" %}
 {% set major_minor = ".".join(version.split(".")[:2]) %}
-{% set sha256 = "f473f2975d26c3409e112ed11ed36406fb3843fa975df575c22d4cb843085f61" %}
+{% set sha256 = "a6549da3a6c43de83b8717dae5413c57a60d92f6ecc624615c612d0bb0ad0fe2" %}
 {% set abi_version = "2.68" %}
 
 package:
@@ -13,7 +13,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - glibmm-{{ abi_version }} >={{ version }}
 
