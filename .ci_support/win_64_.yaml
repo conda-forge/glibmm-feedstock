@@ -7,7 +7,7 @@ channel_targets:
 cxx_compiler:
 - vs2022
 glib:
-- '2.78'
+- '2.90'
 liblzma_devel:
 - '5'
 target_platform:

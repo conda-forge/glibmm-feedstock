@@ -13,7 +13,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '21'
 glib:
-- '2.78'
+- '2.90'
 liblzma_devel:
 - '5'
 macos_machine:
